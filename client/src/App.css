@@ -1,0 +1,48 @@
+
+h1 span{
+  font-size: 1.4rem;
+  padding-left: .2rem;
+}
+
+div.transaction{
+  border-top: 1px solid #979796;
+  padding-top: 17px;
+  padding-bottom: 17px;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+div.transaction:first-child{
+  border-top: 0;
+}
+
+div.transaction div.name{
+  font-size: 1.6rem;
+}
+
+div.transaction div.description{
+  font-size: 1.1rem;
+  color: #aaa;
+}
+
+div.transaction div.price{
+  font-size: 1.6rem;
+}
+
+div.transaction div.datetime{
+  font-size: 1.1rem;
+  color: #aaa;
+}
+
+div.right{
+  text-align: right;
+}
+
+.green{
+  color: #1c1;
+}
+
+.red{
+  color: #c11;
+}

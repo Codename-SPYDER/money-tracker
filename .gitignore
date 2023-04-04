@@ -1,0 +1,6 @@
+.idea
+api/node_modules
+api/.env
+api/uploads/*
+client/.env
+api/yarn-error.log
