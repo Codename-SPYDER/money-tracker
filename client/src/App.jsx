@@ -8,10 +8,11 @@ function App() {
   const [description, setDescription] = useState('');
   const [price, setPrice] = useState('');
   const [transactions, setTransactions] = useState([]);
+  const [reload, setReload] = useState(true);
 
   useEffect(() => {
-    getTransactions().then(transactions => {setTransactions(transactions)});
-  }, [transactions])
+    getTransactions().then(response => setTransactions(response));
+  }, [reload])
 
   async function getTransactions() {
     const url = import.meta.env.VITE_API_URL + '/transactions';
@@ -21,23 +22,29 @@ function App() {
 
   function addNewTransaction(ev) {
     ev.preventDefault();
-    const url = import.meta.env.VITE_API_URL + '/transaction';
-    fetch(url, {
-      method: 'POST',
-      headers: {'Content-type':'application/json'},
-      body: JSON.stringify({
-        price,
-        name, 
-        description, 
-        datetime})
-    }).then(response => {
-      response.json().then(json => {
-        setName('');
-        setDatetime('');
-        setDescription('');
-        setPrice('');
+    if (!name || !datetime || !description || !price) {
+      alert("Please fill out all fields");
+      return;
+    } else {
+      const url = import.meta.env.VITE_API_URL + '/transaction';
+      fetch(url, {
+        method: 'POST',
+        headers: {'Content-type':'application/json'},
+        body: JSON.stringify({
+          price,
+          name, 
+          description, 
+          datetime})
+      }).then(response => {
+        response.json().then(json => {
+          setName('');
+          setDatetime('');
+          setDescription('');
+          setPrice('');
+          setReload(!reload);
+        });
       });
-    });
+    }
   }
 
   let balance = 0;
