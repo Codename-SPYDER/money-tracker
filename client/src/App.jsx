@@ -64,7 +64,7 @@ function App() {
     <main className='bg-slate-800 text-white min-h-screen px-20'>
       {help ? (
   <div className="fixed w-full h-screen bg-slate-800/60 flex flex-col justify-center items-center z-20 top-0 left-0">
-		<p className="bg-slate-400 text-black mb-24 w-1/2 p-8 rounded-md text-lg border-gray-400 border-2">
+		<p className="bg-slate-400 text-black mb-24 w-3/4 xl:w-1/2 p-8 rounded-md text-lg border-gray-400 border-2">
 			Hi, welcome to my money tracker Webapp! <br/><br/> 
       Allow me to provide you with a short tutorial.
 			In the first field, make sure to put a positive or negative value. In the second field, enter a heading for your bill or income.
