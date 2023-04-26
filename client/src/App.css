@@ -19,15 +19,42 @@ div.transaction:first-child{
 
 div.transaction div.name{
   font-size: 1.6rem;
+  text-transform: capitalize;
+}
+@media (max-width: 550px) {
+  div.transaction div.name {
+    font-size: 1.1rem;
+    text-transform: capitalize;
+  }
 }
 
 div.transaction div.description{
   font-size: 1.1rem;
   color: #aaa;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+@media (max-width: 550px) {
+  div.transaction div.description {
+    font-size: .9rem;
+
+  }
+  div.transaction div.description::first-letter {
+    text-transform: capitalize;
+  }
 }
 
 div.transaction div.price{
   font-size: 1.6rem;
+}
+
+@media (max-width: 550px) {
+  div.transaction div.price {
+    font-size: 1.1rem;
+  }
 }
 
 div.transaction div.datetime{
@@ -35,8 +62,23 @@ div.transaction div.datetime{
   color: #aaa;
 }
 
+@media (max-width: 550px) {
+  div.transaction div.datetime {
+    font-size: .9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
+}
+
+div.left{
+  width: 40%;
+}
+
 div.right{
   text-align: right;
+  width: 40%;
 }
 
 .green{
